@@ -1,0 +1,43 @@
+.dashboard {
+    /* background: linear-gradient(to left, #8cb4d0, #8f99a9); */
+    height: 100vh;
+  }
+.header{
+    background-color: #3C79A5;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}  
+.heading{
+    padding: 20px;
+}
+.title{
+    color: #3E3E3E;
+    font-size: 26px;
+    font-weight: 500;
+}
+.table{
+    padding: 5px 20px;
+}
+
+.ant-table-thead >tr>th{
+    color: #3E3E3E !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    background-color: #F5F5F5 !important;
+    border-bottom: 1px solid #000000 !important;
+}
+.ant-table-tbody >tr >td{
+    color: #3E3E3E !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+  .ant-input-affix-wrapper:not(:last-child) {
+    border-radius: 20px !important;
+}
+.ant-input-search-button {
+    display: none;
+ }
+ .selectSearchCol{
+    margin: 0px 0px 10px 0px !important;
+}

@@ -1,0 +1,42 @@
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;	
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden; 
+  background: linear-gradient(to left, #8cb4d0, #8f99a9);
+}
+
+.registerform{
+  background-color: #ecf1f5;
+  padding: 50px 80px;
+  border-radius: 8px;
+}
+.register__input{
+  width: 400px;
+}
+.login__submit{
+  display: flex;
+  justify-content: center;
+}
+.register__submit {
+  display: flex;
+  justify-content: center;
+  width: 100%; 
+}
+
+
+.login-btn {
+  display: inline;
+  text-decoration: underline !important;
+}
