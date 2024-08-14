@@ -40,6 +40,25 @@ const Login = () => {
     navigate("/signup"); 
   };
 
+  const validatePassword = (password) => {
+    if (!/(?=.*[a-z])/.test(password)) {
+      return "Password must contain at least 1 lowercase letter.";
+    }
+    if (!/(?=.*[A-Z])/.test(password)) {
+      return "Password must contain at least 1 uppercase letter.";
+    }
+    if (!/(?=.*\d)/.test(password)) {
+      return "Password must contain at least 1 number.";
+    }
+    if (!/(?=.*[@$!%*?&])/.test(password)) {
+      return "Password must contain at least 1 special character.";
+    }
+    if (password.length < 7) {
+      return "Password must be at least 7 characters long.";
+    }
+    return null; 
+  };
+
   return (
     <section className="container">
       <Row>
@@ -65,11 +84,24 @@ const Login = () => {
               />
             </Form.Item>
             <Form.Item
-              name="password"
-              rules={[
-                { required: true, message: "Please input your Password!" },
-              ]}
-            >
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your password!",
+                    },
+                    {
+                      validator: (_, value) => {
+                        const errorMessage = validatePassword(value);
+                        if (errorMessage) {
+                          return Promise.reject(errorMessage);
+                        }
+                        return Promise.resolve();
+                      },
+                    },
+                  ]}
+                  hasFeedback
+                >
               <Input.Password
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 placeholder="Password"
